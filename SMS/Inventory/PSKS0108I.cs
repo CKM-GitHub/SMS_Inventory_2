@@ -171,8 +171,24 @@ namespace SMS.Inventory
                 tsie.InportStartTime = System.DateTime.Now.Date.ToShortDateString() + " " + txtStartTime.Text.ToString();
                 tsie.InportStartKBN = "2";
                 psks0108ibl.T_SugorakuInport_Update(tsie);
-                lblStage2.BackColor = Color.Yellow;
-                buttonEnable_Check();
+
+                string dateTime = System.DateTime.Now.ToString();
+                mme = new M_MultiPorpose_Entity();
+                mme.Num1 = "0";
+                mme.Key = "1";
+                mme.InsertOperator = loginInfo.OperatorCode;
+                mme.InsertDateTime = dateTime;
+
+                mme.ID = "108";
+                if (psks0108ibl.M_MultiPorpose_Num1_Update(mme))
+                {
+                    mme.ID = "109";
+                    if (psks0108ibl.M_MultiPorpose_Num1_Update(mme))
+                    {
+                        lblStage2.BackColor = Color.Yellow;
+                        buttonEnable_Check();
+                    }
+                }
             }
         }
 
