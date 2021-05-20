@@ -17,6 +17,7 @@ namespace SMS.Login
 {
     public partial class frmLogin : Form
     {
+
         MKAI_Entity mkaiEntity = new MKAI_Entity();
         MOPE_Entity mopeData = new MOPE_Entity();
         Login_BL loginbl = new Login_BL();
