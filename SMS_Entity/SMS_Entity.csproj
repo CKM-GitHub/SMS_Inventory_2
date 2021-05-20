@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81EA2EBF-EA49-4233-94D4-A7A396C506AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMS_Entity</RootNamespace>
+    <AssemblyName>SMS_Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base_Entity.cs" />
+    <Compile Include="M_Zaiko_Kanri_Entity.cs" />
+    <Compile Include="T_AmazonYoteiDate_Entity.cs" />
+    <Compile Include="m_bunrui_Entity.cs" />
+    <Compile Include="m_sports_Entity.cs" />
+    <Compile Include="Login_Info.cs" />
+    <Compile Include="L_Log_Entity.cs" />
+    <Compile Include="MakerZaiko_D_Entity.cs" />
+    <Compile Include="M_MakerZaiko_H_Entity.cs" />
+    <Compile Include="MKAI_Entity.cs" />
+    <Compile Include="MOPE_Entity.cs" />
+    <Compile Include="M_Brand_Entity.cs" />
+    <Compile Include="M_MakerBrand_Entity.cs" />
+    <Compile Include="M_MultiPorpose_Entity.cs" />
+    <Compile Include="M_NoukiHenkan_Entity.cs" />
+    <Compile Include="M_SHIIRESAKI_Entity.cs" />
+    <Compile Include="M_SiiresakiZaiko_Entity.cs" />
+    <Compile Include="ItemSearch_Entity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMNU_Entity.cs" />
+    <Compile Include="SMSG_Entity.cs" />
+    <Compile Include="SuuryoHenKan_Entity.cs" />
+    <Compile Include="T_MakerInportRireki_Entity.cs" />
+    <Compile Include="T_MakerInport_Entity.cs" />
+    <Compile Include="T_MakerZaiko_Entity.cs" />
+    <Compile Include="T_NyuukinMeisai_Entity.cs" />
+    <Compile Include="T_SugorakuInport_Entity.cs" />
+    <Compile Include="M_ShiwakeControl.cs" />
+    <Compile Include="T_Tesuuryou_Entity.cs" />
+    <Compile Include="T_Zaiko_Entity.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

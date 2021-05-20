@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB658A23-C854-4CE1-A4E6-B85F8E912C6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMS_BL</RootNamespace>
+    <AssemblyName>SMS_BL</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base_BL.cs" />
+    <Compile Include="Brand_List_BL.cs" />
+    <Compile Include="PETC0306I_BL.cs" />
+    <Compile Include="m_bunrui_BL.cs" />
+    <Compile Include="m_sports_BL.cs" />
+    <Compile Include="Login_BL.cs" />
+    <Compile Include="Maker_List_BL.cs" />
+    <Compile Include="Menu_BL.cs" />
+    <Compile Include="Message_BL.cs" />
+    <Compile Include="Pattern_List_BL.cs" />
+    <Compile Include="PCMN0101K_BL.cs" />
+    <Compile Include="PETC0301I_BL.cs" />
+    <Compile Include="PETC0302I_BL.cs" />
+    <Compile Include="PETC0303I_BL.cs" />
+    <Compile Include="PETC0307I_BL.cs" />
+    <Compile Include="PETC0308I_BL.cs" />
+    <Compile Include="PETC0309I_BL.cs" />
+    <Compile Include="PETC0310I_BL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSKS0101M_BL.cs" />
+    <Compile Include="PSKS0102M_BL.cs" />
+    <Compile Include="PSKS0120S_BL.cs" />
+    <Compile Include="PSKS0103I_BL.cs" />
+    <Compile Include="PSKS0104I_BL.cs" />
+    <Compile Include="PSKS0105C_BL.cs" />
+    <Compile Include="PSKS0106B_BL.cs" />
+    <Compile Include="PSKS0107B_BL.cs" />
+    <Compile Include="PSKS0108I_BL.cs" />
+    <Compile Include="PSKS0110S_BL.cs" />
+    <Compile Include="PSKS0111C_BL.cs" />
+    <Compile Include="PSKS0112B_BL.cs" />
+    <Compile Include="PSKS0113B_BL.cs" />
+    <Compile Include="PSKS0114C_BL.cs" />
+    <Compile Include="PSKS0115B_BL.cs" />
+    <Compile Include="PSKS0116I_BL.cs" />
+    <Compile Include="PSKS0117B_BL.cs" />
+    <Compile Include="PSKS0118B_BL.cs" />
+    <Compile Include="PSKS0119M_BL.cs" />
+    <Compile Include="ZaikoHenkan_BL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMS_DL\SMS_DL.csproj">
+      <Project>{039b8c30-836f-402d-9749-dbfa2180453e}</Project>
+      <Name>SMS_DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMS_Entity\SMS_Entity.csproj">
+      <Project>{81ea2ebf-ea49-4233-94d4-a7a396c506ab}</Project>
+      <Name>SMS_Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

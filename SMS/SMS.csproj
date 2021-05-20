@@ -1,0 +1,1074 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9C9A57C-47D5-4206-9DFF-B9B17F4C2010}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMS</RootNamespace>
+    <AssemblyName>販売管理</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Publix\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\192.168.0.5\Dropbox %28Capital Group%29\Capital backup\systemdata\inventory\Publish\</UpdateUrl>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>73</ApplicationRevision>
+    <ApplicationVersion>2.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0D586968686972B16BAACCA31CAB20563026161E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_mark_l5k_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="closedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RequireDLL\closedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RequireDLL\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTableToCSV, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RequireDLL\DataTableToCSV.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>RequireDLL\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ElencySolutions.CsvHelper">
+      <HintPath>RequireDLL\ElencySolutions.CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>RequireDLL\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>RequireDLL\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RequireDLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sms_Prog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SMS_V2.0\SMS_V2\SMS\RequireDLL\Sms_Prog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonFunctions.cs" />
+    <Compile Include="CustomControls\DataGridViewDecimalCell.cs" />
+    <Compile Include="CustomControls\DataGridViewDecimalColumn.cs" />
+    <Compile Include="CustomControls\DataGridViewDecimalControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DataGridViewMaskedTextCell.cs" />
+    <Compile Include="CustomControls\DataGridViewMaskedTextColumn.cs" />
+    <Compile Include="CustomControls\DataGridViewMaskedTextControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DateTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DateTimeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\dgvInventoryCell.cs" />
+    <Compile Include="CustomControls\dgvInventoryColumn.cs" />
+    <Compile Include="CustomControls\dgvInventoryControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ReferencedDescriptionAttribute.cs" />
+    <Compile Include="CustomControls\SMS_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SMS_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SMS_GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SMS_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SMS_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SMS_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ucSearchCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ucSearchCombo.Designer.cs">
+      <DependentUpon>ucSearchCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\UC_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\UC_Search.Designer.cs">
+      <DependentUpon>UC_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PECT0307I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PECT0307I.Designer.cs">
+      <DependentUpon>PECT0307I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0301I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0301I.Designer.cs">
+      <DependentUpon>PETC0301I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0302I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0302I.Designer.cs">
+      <DependentUpon>PETC0302I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0303I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0303I.Designer.cs">
+      <DependentUpon>PETC0303I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0304I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0304I.Designer.cs">
+      <DependentUpon>PETC0304I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0305I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0305I.Designer.cs">
+      <DependentUpon>PETC0305I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0306I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0306I.Designer.cs">
+      <DependentUpon>PETC0306I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0308I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0308I.Designer.cs">
+      <DependentUpon>PETC0308I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0309I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0309I.Designer.cs">
+      <DependentUpon>PETC0309I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PETC0310I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PETC0310I.Designer.cs">
+      <DependentUpon>PETC0310I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0104I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0104I.Designer.cs">
+      <DependentUpon>PSKS0104I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0108I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0108I.Designer.cs">
+      <DependentUpon>PSKS0108I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0105C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0105C.Designer.cs">
+      <DependentUpon>PSKS0105C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0111C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0111C.Designer.cs">
+      <DependentUpon>PSKS0111C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0114C_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0114C_1.Designer.cs">
+      <DependentUpon>PSKS0114C_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0114C_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0114C_2.Designer.cs">
+      <DependentUpon>PSKS0114C_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0116I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0116I.Designer.cs">
+      <DependentUpon>PSKS0116I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0119M.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0119M.Designer.cs">
+      <DependentUpon>PSKS0119M.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0120S.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0120S.Designer.cs">
+      <DependentUpon>PSKS0120S.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0005.Designer.cs">
+      <DependentUpon>F0005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0006.Designer.cs">
+      <DependentUpon>F0006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0009.Designer.cs">
+      <DependentUpon>F0009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0011.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0011.Designer.cs">
+      <DependentUpon>F0011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0014.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0014.Designer.cs">
+      <DependentUpon>F0014.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0016.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0016.Designer.cs">
+      <DependentUpon>F0016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0016_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0016_1.Designer.cs">
+      <DependentUpon>F0016_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0101M.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0101M.Designer.cs">
+      <DependentUpon>PSKS0101M.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0102M.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0102M.Designer.cs">
+      <DependentUpon>PSKS0102M.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0103I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0103I.Designer.cs">
+      <DependentUpon>PSKS0103I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\PSKS0110S.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\PSKS0110S.Designer.cs">
+      <DependentUpon>PSKS0110S.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0001.Designer.cs">
+      <DependentUpon>F0001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0002.Designer.cs">
+      <DependentUpon>F0002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0003.Designer.cs">
+      <DependentUpon>F0003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0004.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0004.Designer.cs">
+      <DependentUpon>F0004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0018.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0018.Designer.cs">
+      <DependentUpon>F0018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0021.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0021.Designer.cs">
+      <DependentUpon>F0021.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0022.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0022.Designer.cs">
+      <DependentUpon>F0022.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0023.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0023.Designer.cs">
+      <DependentUpon>F0023.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0028.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0028.Designer.cs">
+      <DependentUpon>F0028.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0029.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0029.Designer.cs">
+      <DependentUpon>F0029.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0030.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0030.Designer.cs">
+      <DependentUpon>F0030.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0031.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0031.Designer.cs">
+      <DependentUpon>F0031.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\temp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\temp.Designer.cs">
+      <DependentUpon>temp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0007.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0007.Designer.cs">
+      <DependentUpon>F0007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0008.Designer.cs">
+      <DependentUpon>F0008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0010.Designer.cs">
+      <DependentUpon>F0010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0012.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0012.Designer.cs">
+      <DependentUpon>F0012.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0013.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0013.Designer.cs">
+      <DependentUpon>F0013.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0015.Designer.cs">
+      <DependentUpon>F0015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0017.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0017.Designer.cs">
+      <DependentUpon>F0017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0019.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0019.Designer.cs">
+      <DependentUpon>F0019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0020.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0020.Designer.cs">
+      <DependentUpon>F0020.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0024.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0024.Designer.cs">
+      <DependentUpon>F0024.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0026.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0026.Designer.cs">
+      <DependentUpon>F0026.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\F0027.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\F0027.Designer.cs">
+      <DependentUpon>F0027.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\M_Bunrui_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\M_Bunrui_List.Designer.cs">
+      <DependentUpon>M_Bunrui_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\M_Sports_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\M_Sports_List.Designer.cs">
+      <DependentUpon>M_Sports_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PETC0303I_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PETC0303I_Import.Designer.cs">
+      <DependentUpon>PETC0303I_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PETC0309I_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PETC0309I_Import.Designer.cs">
+      <DependentUpon>PETC0309I_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PSKS0103I_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PSKS0103I_Import.Designer.cs">
+      <DependentUpon>PSKS0103I_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PSKS0110S_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PSKS0110S_Search.Designer.cs">
+      <DependentUpon>PSKS0110S_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\ZaikoHenkou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\ZaikoHenkou.Designer.cs">
+      <DependentUpon>ZaikoHenkou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PCMN0101K.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PCMN0101K.Designer.cs">
+      <DependentUpon>PCMN0101K.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DS_F0006.cs">
+      <DependentUpon>DS_F0006.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DS_F0006.designer.cs">
+      <DependentUpon>DS_F0006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DS_F00061.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_F0006.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS_Base.Designer.cs">
+      <DependentUpon>SMS_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\LoginPassword.Designer.cs">
+      <DependentUpon>LoginPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\Brand_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\Brand_List.Designer.cs">
+      <DependentUpon>Brand_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\Maker_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\Maker_List.Designer.cs">
+      <DependentUpon>Maker_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\Pattern_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\Pattern_List.Designer.cs">
+      <DependentUpon>Pattern_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplitDT.cs" />
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomControls\dgvInventoryControl.resx">
+      <DependentUpon>dgvInventoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ucSearchCombo.resx">
+      <DependentUpon>ucSearchCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\UC_Search.resx">
+      <DependentUpon>UC_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PECT0307I.resx">
+      <DependentUpon>PECT0307I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0301I.resx">
+      <DependentUpon>PETC0301I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0302I.resx">
+      <DependentUpon>PETC0302I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0303I.resx">
+      <DependentUpon>PETC0303I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0304I.resx">
+      <DependentUpon>PETC0304I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0305I.resx">
+      <DependentUpon>PETC0305I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0306I.resx">
+      <DependentUpon>PETC0306I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0308I.resx">
+      <DependentUpon>PETC0308I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0309I.resx">
+      <DependentUpon>PETC0309I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PETC0310I.resx">
+      <DependentUpon>PETC0310I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0101M.resx">
+      <DependentUpon>PSKS0101M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0102M.resx">
+      <DependentUpon>PSKS0102M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0103I.resx">
+      <DependentUpon>PSKS0103I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0104I.resx">
+      <DependentUpon>PSKS0104I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0108I.resx">
+      <DependentUpon>PSKS0108I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0110S.resx">
+      <DependentUpon>PSKS0110S.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0105C.resx">
+      <DependentUpon>PSKS0105C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0111C.resx">
+      <DependentUpon>PSKS0111C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0114C_1.resx">
+      <DependentUpon>PSKS0114C_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0114C_2.resx">
+      <DependentUpon>PSKS0114C_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0116I.resx">
+      <DependentUpon>PSKS0116I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0119M.resx">
+      <DependentUpon>PSKS0119M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\PSKS0120S.resx">
+      <DependentUpon>PSKS0120S.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginPassword.resx">
+      <DependentUpon>LoginPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0001.resx">
+      <DependentUpon>F0001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0002.resx">
+      <DependentUpon>F0002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0003.resx">
+      <DependentUpon>F0003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0004.resx">
+      <DependentUpon>F0004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0005.resx">
+      <DependentUpon>F0005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0006.resx">
+      <DependentUpon>F0006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0009.resx">
+      <DependentUpon>F0009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0011.resx">
+      <DependentUpon>F0011.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0014.resx">
+      <DependentUpon>F0014.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0016.resx">
+      <DependentUpon>F0016.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0018.resx">
+      <DependentUpon>F0018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0021.resx">
+      <DependentUpon>F0021.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0022.resx">
+      <DependentUpon>F0022.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0023.resx">
+      <DependentUpon>F0023.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0028.resx">
+      <DependentUpon>F0028.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0029.resx">
+      <DependentUpon>F0029.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0030.resx">
+      <DependentUpon>F0030.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0031.resx">
+      <DependentUpon>F0031.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\temp.resx">
+      <DependentUpon>temp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0007.resx">
+      <DependentUpon>F0007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0008.resx">
+      <DependentUpon>F0008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0010.resx">
+      <DependentUpon>F0010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0012.resx">
+      <DependentUpon>F0012.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0013.resx">
+      <DependentUpon>F0013.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0015.resx">
+      <DependentUpon>F0015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0016_1.resx">
+      <DependentUpon>F0016_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0017.resx">
+      <DependentUpon>F0017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0019.resx">
+      <DependentUpon>F0019.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0020.resx">
+      <DependentUpon>F0020.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0024.resx">
+      <DependentUpon>F0024.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0026.resx">
+      <DependentUpon>F0026.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\F0027.resx">
+      <DependentUpon>F0027.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\Brand_List.resx">
+      <DependentUpon>Brand_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\M_Bunrui_List.resx">
+      <DependentUpon>M_Bunrui_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\M_Sports_List.resx">
+      <DependentUpon>M_Sports_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\Maker_List.resx">
+      <DependentUpon>Maker_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\Pattern_List.resx">
+      <DependentUpon>Pattern_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PCMN0101K.resx">
+      <DependentUpon>PCMN0101K.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PETC0303I_Import.resx">
+      <DependentUpon>PETC0303I_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PETC0309I_Import.resx">
+      <DependentUpon>PETC0309I_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PSKS0103I_Import.resx">
+      <DependentUpon>PSKS0103I_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PSKS0110S_Search.resx">
+      <DependentUpon>PSKS0110S_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\ZaikoHenkou.resx">
+      <DependentUpon>ZaikoHenkou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\RF0006.rdlc" />
+    <EmbeddedResource Include="Report\RF0009.rdlc" />
+    <EmbeddedResource Include="Report\RF0018.rdlc" />
+    <EmbeddedResource Include="Report\RF0021.rdlc" />
+    <EmbeddedResource Include="Report\RF0022.rdlc" />
+    <EmbeddedResource Include="Report\RF0023.rdlc" />
+    <EmbeddedResource Include="SMS_Base.resx">
+      <DependentUpon>SMS_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Report\DS_F0006.xsc">
+      <DependentUpon>DS_F0006.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DS_F0006.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_F00061.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\DS_F0006.xss">
+      <DependentUpon>DS_F0006.xsd</DependentUpon>
+    </None>
+    <None Include="SMS_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
+      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
+      <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMS_BL\SMS_BL.csproj">
+      <Project>{ab658a23-c854-4ce1-a4e6-b85f8e912c6b}</Project>
+      <Name>SMS_BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMS_DL\SMS_DL.csproj">
+      <Project>{039b8c30-836f-402d-9749-dbfa2180453e}</Project>
+      <Name>SMS_DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMS_Entity\SMS_Entity.csproj">
+      <Project>{81ea2ebf-ea49-4233-94d4-a7a396c506ab}</Project>
+      <Name>SMS_Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WaitWnd\WaitWnd.csproj">
+      <Project>{a36149b7-3811-451b-9097-74a66d255a5b}</Project>
+      <Name>WaitWnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture6.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture7.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture8.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture9.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture10.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture12.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture21.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downarrow.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RequireDLL\closedXML.dll" />
+    <Content Include="RequireDLL\CsvHelper.dll" />
+    <Content Include="RequireDLL\DataTableToCSV.dll" />
+    <Content Include="RequireDLL\DocumentFormat.OpenXml.dll" />
+    <Content Include="RequireDLL\ElencySolutions.CsvHelper.dll" />
+    <Content Include="RequireDLL\ExcelDataReader.DataSet.dll" />
+    <Content Include="RequireDLL\ExcelDataReader.dll" />
+    <Content Include="RequireDLL\Sms_Prog.dll" />
+    <Content Include="RequireDLL\SplittingDT.exe" />
+    <Content Include="Resources\Failed.png" />
+    <None Include="Images\Loading.gif" />
+    <Content Include="Images\wait.png" />
+    <Content Include="Images\logo_mark_l5k_icon.ico" />
+    <Content Include="logo_mark_l5k_icon.ico" />
+    <Content Include="RequireDLL\CKM_Controls.dll" />
+    <Content Include="RequireDLL\Newtonsoft.Json.dll" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\dbImport.png" />
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="RequireDLL\SplittingDT.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
