@@ -542,7 +542,9 @@ namespace SMS.Inventory
                             if (dgvImportRireki.CurrentCell.ColumnIndex == dgvImportRireki.Columns["chk1"].Index)
                             {
                                 ErrChkFlg = "";
-                                ImportFileName= dgvImportRireki.Rows[e.RowIndex].Cells["colInportFile"].Value.ToString();
+                                dgvFileDetail.DataSource = null;
+                                btnCSVExport.Enabled = true;
+                                ImportFileName = dgvImportRireki.Rows[e.RowIndex].Cells["colInportFile"].Value.ToString();
                                 InportSEQ = dgvImportRireki.Rows[e.RowIndex].Cells["colInportSEQ"].Value.ToString();
                                 if (row1 == dgvImportRireki.CurrentRow)
                                 {
@@ -571,6 +573,9 @@ namespace SMS.Inventory
                                 InportSEQ = dgvImportRireki.Rows[e.RowIndex].Cells["colInportSEQ"].Value.ToString();
                                 ImportFileName = dgvImportRireki.Rows[e.RowIndex].Cells["colInportFile"].Value.ToString();
                                 ErrChkFlg = "2";
+
+                                dgvFileDetail.DataSource = null;
+                                btnCSVExport.Enabled = true;
                                 if (row1 == dgvImportRireki.CurrentRow)
                                 {
                                     chk2.Value = chk2.TrueValue;
@@ -672,6 +677,7 @@ namespace SMS.Inventory
                         FunctionButtonEnabled(12);
                         btnImport.Enabled = true;
                         btnF11_Detail.Enabled = false;
+                        btnCSVExport.Enabled = false;
                     }
                 }
             }
