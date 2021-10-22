@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base_DL.cs" />
+    <Compile Include="Excel_DL.cs" />
     <Compile Include="M_Zaiko_Kanri_DL.cs" />
     <Compile Include="PETC0310I_DL.cs" />
     <Compile Include="T_AmazonYoteiDate_DL.cs" />
