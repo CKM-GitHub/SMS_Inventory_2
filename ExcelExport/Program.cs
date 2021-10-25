@@ -28,15 +28,19 @@ namespace ExcelExport {
             string val2 = after1Month.ToString();
             DataTable dtExcel = excel_BL.Excel_Select(val1,val2);
 
+            string year = now.Year.ToString();
+            string month = String.Format("{0:MM}", now);
+            string maru = now.Month.ToString();
+
             int k = 0;
             string addressKBN = string.Empty;
             if (dtExcel.Rows.Count > 0)
             {
                 string FilePath = dtMail.Rows[0]["FilePath"].ToString();
                 string FileFolder = dtMail.Rows[0]["FileFolder"].ToString();
-                string FileName = dtMail.Rows[0]["FileName"].ToString() + ".xlsx";
+                string FileName = dtMail.Rows[0]["FileName"].ToString();
                 string filepath = FilePath + FileFolder+ "\\" ;
-                string savefn = filepath + FileName;
+                string savefn = filepath + FileName +"(" + year + month + ")"+ ".xlsx";
                 if (!Directory.Exists(filepath))
                 {
                     Directory.CreateDirectory(filepath);
@@ -49,7 +53,7 @@ namespace ExcelExport {
                 savedialog.RestoreDirectory = true;
                 //if (savedialog.ShowDialog() == DialogResult.OK)
                 //{
-                if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                if (Path.GetExtension(savedialog.FileName+ ".xlsx").Contains(".xlsx"))
                 {
                     Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                     Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
@@ -88,8 +92,15 @@ namespace ExcelExport {
                         SmtpClient smtpServer = new SmtpClient(SenderServer);
                         mm.From = new MailAddress(FromMail);
 
-                        mm.Subject = dtTemp.Rows[0]["MailSubject"].ToString();
-                        mm.Body = dtTemp.Rows[0]["MailContent"].ToString();
+                        string s = dtTemp.Rows[0]["MailSubject"].ToString();
+                        string b = dtTemp.Rows[0]["MailContent"].ToString();
+                        if (s.Contains("〇") || b.Contains("〇"))
+                        {
+                            mm.Subject = s.Replace("〇", maru);
+                            mm.Body = b.Replace("〇", maru);
+                        }
+                        //mm.Subject = dtTemp.Rows[0]["MailContent"].ToString();
+                        //mm.Body = dtTemp.Rows[0]["MailContent"].ToString();
                         for (int ct = 0; ct < dtTemp.Rows.Count; ct++)
                         {
                             if (dtTemp.Rows[ct]["AddressKBN"].ToString().Equals("1"))
@@ -121,7 +132,7 @@ namespace ExcelExport {
 
                         AttPath = dtTemp.Rows[0]["FilePath"].ToString();
                         AttFolder = dtTemp.Rows[0]["FileFolder"].ToString();
-                        AttFileName = dtTemp.Rows[0]["FileName"].ToString()+ ".xlsx";
+                        AttFileName = dtTemp.Rows[0]["FileName"].ToString() +"(" + year + month + ")"+ ".xlsx";
 
                         string filepath = AttPath + AttFolder + "\\" + AttFileName;
                         if (File.Exists(filepath))
