@@ -123,22 +123,23 @@ namespace ExcelExport {
                         AttFolder = dtTemp.Rows[0]["FileFolder"].ToString();
                         AttFileName = dtTemp.Rows[0]["FileName"].ToString()+ ".xlsx";
 
-                        string filepath = AttPath + "\\" + AttFolder + "\\" + AttFileName;
+                        string filepath = AttPath + AttFolder + "\\" + AttFileName;
                         if (File.Exists(filepath))
                         {
                             mm.Attachments.Add(new Attachment(filepath));
                         }
                         smtpServer.Port = 587;
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
-                        smtpServer.EnableSsl = false;
+                        smtpServer.EnableSsl = true;
+                        //smtpServer.UseDefaultCredentials = false;
                         try
                         {
                             smtpServer.Send(mm);
-                            if (excel_BL.MailSend_Update(Convert.ToInt32(addressKBN)))
-                            {
-                                Console.WriteLine("メールのご送信が完了致しました。");
+                            //if (excel_BL.MailSend_Update(Convert.ToInt32(addressKBN)))
+                            //{
+                            //    Console.WriteLine("メールのご送信が完了致しました。");
 
-                            }
+                            //}
                         }
                         catch (Exception ex)
                         {
