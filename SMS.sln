@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1145
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS", "SMS\SMS.csproj", "{A9C9A57C-47D5-4206-9DFF-B9B17F4C2010}"
 EndProject
@@ -45,6 +45,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKM_Controls", "CKM_Controls\CKM_Controls\CKM_Controls.csproj", "{472A8D76-1CE3-430E-89FE-373D2F6B1031}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS_DB_Backup", "SMS_DB_Backup\SMS_DB_Backup.csproj", "{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelExport", "ExcelExport\ExcelExport.csproj", "{16240DB4-90B0-4967-B0EC-885F8B233758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,6 +126,10 @@ Global
 		{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16240DB4-90B0-4967-B0EC-885F8B233758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16240DB4-90B0-4967-B0EC-885F8B233758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16240DB4-90B0-4967-B0EC-885F8B233758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16240DB4-90B0-4967-B0EC-885F8B233758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
