@@ -34,7 +34,9 @@ namespace ExcelExport {
             {
                 string FilePath = dtMail.Rows[0]["FilePath"].ToString();
                 string FileFolder = dtMail.Rows[0]["FileFolder"].ToString();
+                string FileName = dtMail.Rows[0]["FileName"].ToString() + ".xlsx";
                 string filepath = FilePath + FileFolder+ "\\" ;
+                string savefn = filepath + FileName;
                 if (!Directory.Exists(filepath))
                 {
                     Directory.CreateDirectory(filepath);
@@ -42,7 +44,7 @@ namespace ExcelExport {
                 SaveFileDialog savedialog = new SaveFileDialog();
                 savedialog.Filter = "Excel Files|*.xlsx;";
                 savedialog.Title = "Save";
-                savedialog.FileName = dtMail.Rows[0]["FileName"].ToString()+ ".xlsx";
+                savedialog.FileName = FileName;
                 savedialog.InitialDirectory = filepath;
                 savedialog.RestoreDirectory = true;
                 //if (savedialog.ShowDialog() == DialogResult.OK)
@@ -59,9 +61,9 @@ namespace ExcelExport {
                     {
                         wb.Worksheets.Add(dtExcel, "worksheet");
                         wb.Worksheet("worksheet").Tables.FirstOrDefault().ShowAutoFilter = false;
-                        wb.SaveAs(savedialog.FileName);
+                        wb.SaveAs(savefn);
                     }
-                    Process.Start(Path.GetFullPath(savedialog.FileName));
+                    //Process.Start(Path.GetFullPath(savedialog.FileName));
                 }
                 //}
 
@@ -119,7 +121,7 @@ namespace ExcelExport {
 
                         AttPath = dtTemp.Rows[0]["FilePath"].ToString();
                         AttFolder = dtTemp.Rows[0]["FileFolder"].ToString();
-                        AttFileName = dtTemp.Rows[0]["FileName"].ToString();
+                        AttFileName = dtTemp.Rows[0]["FileName"].ToString()+ ".xlsx";
 
                         string filepath = AttPath + "\\" + AttFolder + "\\" + AttFileName;
                         if (File.Exists(filepath))
