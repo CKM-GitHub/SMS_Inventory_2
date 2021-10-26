@@ -18,22 +18,32 @@ namespace ExcelExport {
             DataTable dtMail = new DataTable();
             Excel_BL excel_BL = new Excel_BL();
             dtMail = excel_BL.Mail_Select();
-
            
-            string val1= dtMail.Rows[0]["SendedDateTime"].ToString();
+            string start= dtMail.Rows[0]["SendedDateTime"].ToString();
+            string end, year, month, maru = String.Empty;
 
-            DateTime now = Convert.ToDateTime(dtMail.Rows[0]["SendedDateTime"].ToString());
+            if (String.IsNullOrWhiteSpace(start))
+            {
+                DateTime today = DateTime.Now;
+                start =today.AddMonths(-1).ToString();
+                end = today.ToString();
 
-            DateTime after1Month = now.AddMonths(1);
-            string val2 = after1Month.ToString();
-            DataTable dtExcel = excel_BL.Excel_Select(val1,val2);
+                year = today.Year.ToString();
+                month = String.Format("{0:MM}", today);
+                maru = today.Month.ToString();
+            }
+            else
+            {
+                DateTime now = Convert.ToDateTime(start);
+                DateTime after1Month = now.AddMonths(1);
+                end = after1Month.ToString();
 
-            string year = now.Year.ToString();
-            string month = String.Format("{0:MM}", now);
-            string maru = now.Month.ToString();
+                year = now.Year.ToString();
+                month = String.Format("{0:MM}", now);
+                maru = now.Month.ToString();
+            }
+            DataTable dtExcel = excel_BL.Excel_Select(start, end);
 
-            int k = 0;
-            string addressKBN = string.Empty;
             if (dtExcel.Rows.Count > 0)
             {
                 string FilePath = dtMail.Rows[0]["FilePath"].ToString();
@@ -72,18 +82,23 @@ namespace ExcelExport {
                 //}
 
             }
+            else
+            {
+                Console.WriteLine("Stop");
+            }
 
+            string mailcounter = string.Empty;
             if (dtMail.Rows.Count > 0)
             {
                 for (int i = 0; i < dtMail.Rows.Count; i++)
                 {
                     string SenderServer = "", FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttPath = "", AttFolder = "", AttFileName = "";
 
-                    if (addressKBN != dtMail.Rows[i]["AddressKBN"].ToString())
+                    if (mailcounter != dtMail.Rows[i]["SenderID"].ToString())
                     {
-                        addressKBN = dtMail.Rows[i]["AddressKBN"].ToString();
+                        mailcounter = dtMail.Rows[i]["SenderID"].ToString();
                         DataTable dtTemp = new DataTable();
-                        dtTemp = dtMail.Select("AddressKBN='" + addressKBN + "'").CopyToDataTable();
+                        dtTemp = dtMail.Select("SenderID='" + mailcounter + "'").CopyToDataTable();
                         MailMessage mm = new MailMessage();
                         FromMail = dtTemp.Rows[0]["SenderAddress"].ToString();
                         FromPwd = dtTemp.Rows[0]["Password"].ToString();
@@ -141,16 +156,15 @@ namespace ExcelExport {
                         }
                         smtpServer.Port = 587;
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
-                        smtpServer.EnableSsl = true;
+                        smtpServer.EnableSsl = false;
                         //smtpServer.UseDefaultCredentials = false;
                         try
                         {
                             smtpServer.Send(mm);
-                            //if (excel_BL.MailSend_Update(Convert.ToInt32(addressKBN)))
-                            //{
-                            //    Console.WriteLine("メールのご送信が完了致しました。");
-
-                            //}
+                            if (excel_BL.MailSend_Update(Convert.ToInt32(mailcounter)))
+                            {
+                                Console.WriteLine("メールのご送信が完了致しました。");
+                            }
                         }
                         catch (Exception ex)
                         {
