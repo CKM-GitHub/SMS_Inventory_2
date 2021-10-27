@@ -20,9 +20,9 @@ namespace SMS_BL {
         {
             return excel_DL.Mail_Select();
         }
-        public bool MailSend_Update(int MailCount)
+        public bool MailSend_Update(int SenderID)
         {
-            return excel_DL.MailSend_Update(MailCount);
+            return excel_DL.MailSend_Update(SenderID);
         }
     }
 }

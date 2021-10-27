@@ -25,11 +25,11 @@ namespace SMS_DL {
             return SelectData(dic, sp);
         }
       
-        public bool MailSend_Update(int MailCount)
+        public bool MailSend_Update(int SenderID)
         {
             string sp = "Mail_Send_Update";
             Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("@MailCount", MailCount.ToString());   
+            dic.Add("@SenderID", SenderID.ToString());   
             
             return InsertUpdateDeleteData(dic, sp);
         }
