@@ -15,30 +15,40 @@ namespace ExcelExport {
     class Program {
 
         static DateTime start, end;
-        static string year, month, maru = String.Empty;
+        static string ID,year, month, maru = String.Empty;
         static DataTable dtMail, dtExcel = new DataTable();
         static Excel_BL excel_BL = new Excel_BL();
 
         public static void Main(string[] args)
         {
             dtMail = excel_BL.Mail_Select();
+
+            for (int i = 0; i < dtMail.Rows.Count; i++)
+            {
+                ID = dtMail.Rows[i]["ID"].ToString();
+                if (ID == dtMail.Rows[i]["ID"].ToString())
+                {
+                    start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
+                    end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
+
+                    year = start.Year.ToString();
+                    month = String.Format("{0:MM}", start);
+                    maru = start.Month.ToString();
+                }
+
+                Excel();
+                if (dtExcel.Rows.Count > 0)
+                {
+                    MailSend();
+                    dtMail = excel_BL.Mail_Select();
+                }
+                else
+                {
+                    Console.WriteLine("Stop");
+                }
+
+            }                  
            
-            start= Convert.ToDateTime(dtMail.Rows[0]["StartDate"]);
-            end = Convert.ToDateTime(dtMail.Rows[0]["EndDate"]);
-         
-            year = start.Year.ToString();
-            month = String.Format("{0:MM}", start);
-            maru = start.Month.ToString();
-         
-            Excel();
-            if (dtExcel.Rows.Count > 0)
-            {
-                MailSend();
-            }
-            else
-            {
-                Console.WriteLine("Stop");
-            }
         }
         private static void Excel()
         {
@@ -145,11 +155,14 @@ namespace ExcelExport {
                         smtpServer.EnableSsl = false;
                         try
                         {
-                            smtpServer.Send(mm);
-                            if (excel_BL.MailSend_Update(Convert.ToInt32(SenderID)))
+                            if(ID == SenderID)
                             {
-                                Console.WriteLine("メールのご送信が完了致しました。");
-                            }
+                                smtpServer.Send(mm);
+                                if (excel_BL.MailSend_Update(Convert.ToInt32(SenderID)))
+                                {
+                                    Console.WriteLine("メールのご送信が完了致しました。");
+                                }
+                            }                          
                         }
                         catch (Exception ex)
                         {
