@@ -14,7 +14,8 @@ using System.Windows.Forms;
 namespace ExcelExport {
     class Program {
 
-        static string start,end, year, month, maru = String.Empty;
+        static DateTime start, end;
+        static string year, month, maru = String.Empty;
         static DataTable dtMail, dtExcel = new DataTable();
         static Excel_BL excel_BL = new Excel_BL();
 
@@ -22,28 +23,13 @@ namespace ExcelExport {
         {
             dtMail = excel_BL.Mail_Select();
            
-            start= dtMail.Rows[0]["SendedDateTime"].ToString();
-
-            if (String.IsNullOrWhiteSpace(start))
-            {
-                DateTime today = DateTime.Now;
-                start =today.AddMonths(-1).ToString();
-                end = today.ToString();
-
-                year = today.Year.ToString();
-                month = String.Format("{0:MM}", today);
-                maru = today.Month.ToString();
-            }
-            else
-            {
-                DateTime now = Convert.ToDateTime(start);
-                DateTime after1Month = now.AddMonths(1);
-                end = after1Month.ToString();
-
-                year = now.Year.ToString();
-                month = String.Format("{0:MM}", now);
-                maru = now.Month.ToString();
-            }
+            start= Convert.ToDateTime(dtMail.Rows[0]["StartDate"]);
+            end = Convert.ToDateTime(dtMail.Rows[0]["EndDate"]);
+         
+            year = start.Year.ToString();
+            month = String.Format("{0:MM}", start);
+            maru = start.Month.ToString();
+         
             Excel();
             if (dtExcel.Rows.Count > 0)
             {
@@ -56,7 +42,7 @@ namespace ExcelExport {
         }
         private static void Excel()
         {
-            dtExcel = excel_BL.Excel_Select(start, end);
+            dtExcel = excel_BL.Excel_Select(start.ToString(), end.ToString());
 
             if (dtExcel.Rows.Count > 0)
             {
