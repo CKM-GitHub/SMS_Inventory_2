@@ -15,20 +15,22 @@ namespace ExcelExport {
     class Program {
 
         static DateTime start, end;
-        static string ID,year, month, maru = String.Empty;
+        static string year, month, maru = String.Empty;
         static DataTable dtMail, dtExcel = new DataTable();
         static Excel_BL excel_BL = new Excel_BL();
 
         public static void Main(string[] args)
         {
             dtMail = excel_BL.Mail_Select();
-
+            string ID = string.Empty;
             for (int i = 0; i < dtMail.Rows.Count; i++)
             {
-                ID = dtMail.Rows[i]["ID"].ToString();
-                if (ID == dtMail.Rows[i]["ID"].ToString())
+                //ID = dtMail.Rows[i]["ID"].ToString();
+                
+                if (ID != dtMail.Rows[i]["ID"].ToString())
                 {
-                     start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
+                    ID = dtMail.Rows[i]["ID"].ToString();
+                    start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
                      end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
 
                     year = start.Year.ToString();
