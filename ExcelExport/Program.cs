@@ -39,17 +39,16 @@ namespace ExcelExport {
                     Excel();
                     if (dtExcel.Rows.Count > 0)
                     {
-                        MailSend(ID);
+                        bool ret=MailSend(ID);
+                        if(ret)
+                            if (excel_BL.MailSend_Update(Convert.ToInt32(ID)))
+                            {
+                                Console.WriteLine("メールのご送信が完了致しました。");
+                            }
                     }
                     
-                    if (excel_BL.MailSend_Update(Convert.ToInt32(ID)))
-                    {
-                        Console.WriteLine("メールのご送信が完了致しました。");
-                    }
+                   
                 }
-
-                
-                
 
             }                  
            
@@ -93,7 +92,7 @@ namespace ExcelExport {
                 }
             }
         }
-        private static void MailSend(String SenderID)
+        private static bool MailSend(String SenderID)
         {
             //string SenderID = string.Empty;
             if (dtMail.Rows.Count > 0)
@@ -162,12 +161,13 @@ namespace ExcelExport {
                             //if(ID == SenderID)
                             //{
                                 smtpServer.Send(mm);
-                                
+                                return true;
                            // }                          
                         }
                         catch (Exception ex)
                         {
                             var er = ex.Message;
+                            return false;
                         }
                    // }
 
