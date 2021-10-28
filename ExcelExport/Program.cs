@@ -39,7 +39,7 @@ namespace ExcelExport {
                     Excel();
                     if (dtExcel.Rows.Count > 0)
                     {
-                        MailSend();
+                        MailSend(ID);
                     }
                     
                     if (excel_BL.MailSend_Update(Convert.ToInt32(ID)))
@@ -93,18 +93,18 @@ namespace ExcelExport {
                 }
             }
         }
-        private static void MailSend()
+        private static void MailSend(String SenderID)
         {
-            string SenderID = string.Empty;
+            //string SenderID = string.Empty;
             if (dtMail.Rows.Count > 0)
             {
-                for (int i = 0; i < dtMail.Rows.Count; i++)
-                {
+                //for (int i = 0; i < dtMail.Rows.Count; i++)
+                //{
                     string SenderServer = "", FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttPath = "", AttFolder = "", AttFileName = "";
 
-                    if (SenderID != dtMail.Rows[i]["SenderID"].ToString())
-                    {
-                        SenderID = dtMail.Rows[i]["SenderID"].ToString();
+                    //if (SenderID != dtMail.Rows[i]["SenderID"].ToString())
+                    //{
+                        //SenderID = dtMail.Rows[i]["SenderID"].ToString();
                         DataTable dtTemp = new DataTable();
                         dtTemp = dtMail.Select("SenderID='" + SenderID + "'").CopyToDataTable();
                         MailMessage mm = new MailMessage();
@@ -169,9 +169,9 @@ namespace ExcelExport {
                         {
                             var er = ex.Message;
                         }
-                    }
+                   // }
 
-                }
+                //}
             }
         }
     }
