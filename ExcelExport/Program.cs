@@ -28,24 +28,26 @@ namespace ExcelExport {
                 ID = dtMail.Rows[i]["ID"].ToString();
                 if (ID == dtMail.Rows[i]["ID"].ToString())
                 {
-                    start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
-                    end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
+                     start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
+                     end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
 
                     year = start.Year.ToString();
                     month = String.Format("{0:MM}", start);
                     maru = start.Month.ToString();
+                    Excel();
+                    if (dtExcel.Rows.Count > 0)
+                    {
+                        MailSend();
+                    }
+                    
+                    if (excel_BL.MailSend_Update(Convert.ToInt32(ID)))
+                    {
+                        Console.WriteLine("メールのご送信が完了致しました。");
+                    }
                 }
 
-                Excel();
-                if (dtExcel.Rows.Count > 0)
-                {
-                    MailSend();
-                    dtMail = excel_BL.Mail_Select();
-                }
-                else
-                {
-                    Console.WriteLine("Stop");
-                }
+                
+                
 
             }                  
            
@@ -155,14 +157,11 @@ namespace ExcelExport {
                         smtpServer.EnableSsl = false;
                         try
                         {
-                            if(ID == SenderID)
-                            {
+                            //if(ID == SenderID)
+                            //{
                                 smtpServer.Send(mm);
-                                if (excel_BL.MailSend_Update(Convert.ToInt32(SenderID)))
-                                {
-                                    Console.WriteLine("メールのご送信が完了致しました。");
-                                }
-                            }                          
+                                
+                           // }                          
                         }
                         catch (Exception ex)
                         {
