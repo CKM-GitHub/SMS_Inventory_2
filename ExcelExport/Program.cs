@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace ExcelExport {
     class Program {
 
-        static DateTime start, end;
+        static string start, end;
         static string year, month, maru = String.Empty;
         static DataTable dtMail, dtExcel = new DataTable();
         static Excel_BL excel_BL = new Excel_BL();
@@ -30,12 +30,14 @@ namespace ExcelExport {
                 if (ID != dtMail.Rows[i]["ID"].ToString())
                 {
                     ID = dtMail.Rows[i]["ID"].ToString();
-                    start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
-                     end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
+                    start = dtMail.Rows[i]["StartDate"].ToString();
+                    end = dtMail.Rows[i]["EndDate"].ToString();
 
-                    year = start.Year.ToString();
-                    month = String.Format("{0:MM}", start);
-                    maru = start.Month.ToString();
+                    DateTime date = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
+                    year = date.Year.ToString();
+                    month = String.Format("{0:MM}", date);
+                    maru = date.Month.ToString();
+
                     Excel();
                     if (dtExcel.Rows.Count > 0)
                     {
@@ -46,8 +48,7 @@ namespace ExcelExport {
                                 Console.WriteLine("メールのご送信が完了致しました。");
                             }
                     }
-                    
-                   
+                                       
                 }
 
             }                  
@@ -55,7 +56,7 @@ namespace ExcelExport {
         }
         private static void Excel()
         {
-            dtExcel = excel_BL.Excel_Select(start.ToString(), end.ToString());
+            dtExcel = excel_BL.Excel_Select(start,end);
 
             if (dtExcel.Rows.Count > 0)
             {
@@ -169,10 +170,11 @@ namespace ExcelExport {
                             var er = ex.Message;
                             return false;
                         }
-                   // }
+                // }
 
                 //}
             }
+            return true;
         }
     }
 }
