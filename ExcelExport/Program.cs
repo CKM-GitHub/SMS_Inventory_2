@@ -14,15 +14,14 @@ using System.Windows.Forms;
 namespace ExcelExport {
     class Program {
 
-        static string start, end;
-        static string year, month, maru = String.Empty;
+        static string year, month, maru = string.Empty;
         static DataTable dtMail, dtExcel = new DataTable();
         static Excel_BL excel_BL = new Excel_BL();
 
         public static void Main(string[] args)
         {
             dtMail = excel_BL.Mail_Select();
-            string ID = string.Empty;
+            string start, end ,ID= string.Empty;
             for (int i = 0; i < dtMail.Rows.Count; i++)
             {
                 //ID = dtMail.Rows[i]["ID"].ToString();
@@ -38,7 +37,7 @@ namespace ExcelExport {
                     month = String.Format("{0:MM}", date);
                     maru = date.Month.ToString();
 
-                    Excel();
+                    Excel(start,end);
                     if (dtExcel.Rows.Count > 0)
                     {
                         bool ret=MailSend(ID);
@@ -54,7 +53,7 @@ namespace ExcelExport {
             }                  
            
         }
-        private static void Excel()
+        private static void Excel(string start,string end)
         {
             dtExcel = excel_BL.Excel_Select(start,end);
 
