@@ -28,8 +28,8 @@ namespace ExcelExport {
                 ID = dtMail.Rows[i]["ID"].ToString();
                 if (ID == dtMail.Rows[i]["ID"].ToString())
                 {
-                     start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
-                     end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
+                    start = Convert.ToDateTime(dtMail.Rows[i]["StartDate"]);
+                    end = Convert.ToDateTime(dtMail.Rows[i]["EndDate"]);
 
                     year = start.Year.ToString();
                     month = String.Format("{0:MM}", start);
@@ -45,12 +45,7 @@ namespace ExcelExport {
                         Console.WriteLine("メールのご送信が完了致しました。");
                     }
                 }
-
-                
-                
-
-            }                  
-           
+            }                            
         }
         private static void Excel()
         {
@@ -156,12 +151,8 @@ namespace ExcelExport {
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
                         smtpServer.EnableSsl = false;
                         try
-                        {
-                            //if(ID == SenderID)
-                            //{
-                                smtpServer.Send(mm);
-                                
-                           // }                          
+                        {                         
+                             smtpServer.Send(mm);                               
                         }
                         catch (Exception ex)
                         {
