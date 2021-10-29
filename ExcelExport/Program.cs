@@ -63,7 +63,7 @@ namespace ExcelExport {
                 string FileFolder = dtMail.Rows[0]["FileFolder"].ToString();
                 string FileName = dtMail.Rows[0]["FileName"].ToString();
                 string filepath = FilePath + FileFolder + "\\";
-                string savefn = filepath + FileName + "(" + year + month + ")" + ".xlsx";
+                string savefn = filepath + FileName + "（" + year + month + "）" + ".xlsx";
                 if (!Directory.Exists(filepath))
                 {
                     Directory.CreateDirectory(filepath);
@@ -146,7 +146,7 @@ namespace ExcelExport {
 
                         AttPath = dtTemp.Rows[0]["FilePath"].ToString();
                         AttFolder = dtTemp.Rows[0]["FileFolder"].ToString();
-                        AttFileName = dtTemp.Rows[0]["FileName"].ToString() + "(" + year + month + ")" + ".xlsx";
+                        AttFileName = dtTemp.Rows[0]["FileName"].ToString() + "（" + year + month + "）" + ".xlsx";
 
                         string filepath = AttPath + AttFolder + "\\" + AttFileName;
                         if (File.Exists(filepath))
