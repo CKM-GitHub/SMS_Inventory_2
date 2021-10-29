@@ -94,16 +94,9 @@ namespace ExcelExport {
         }
         private static bool MailSend(String SenderID)
         {
-            //string SenderID = string.Empty;
             if (dtMail.Rows.Count > 0)
             {
-                //for (int i = 0; i < dtMail.Rows.Count; i++)
-                //{
                     string SenderServer = "", FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttPath = "", AttFolder = "", AttFileName = "";
-
-                    //if (SenderID != dtMail.Rows[i]["SenderID"].ToString())
-                    //{
-                        //SenderID = dtMail.Rows[i]["SenderID"].ToString();
                         DataTable dtTemp = new DataTable();
                         dtTemp = dtMail.Select("SenderID='" + SenderID + "'").CopyToDataTable();
                         MailMessage mm = new MailMessage();
@@ -153,25 +146,19 @@ namespace ExcelExport {
                         {
                             mm.Attachments.Add(new Attachment(filepath));
                         }
-                        smtpServer.Port = 587;
+                        smtpServer.Port = 587; 
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
                         smtpServer.EnableSsl = false;
                         try
                         {
-                            //if(ID == SenderID)
-                            //{
-                                smtpServer.Send(mm);
-                                return true;
-                           // }                          
-                        }
+                            smtpServer.Send(mm);
+                            return true;                        
+                        } 
                         catch (Exception ex)
                         {
                             var er = ex.Message;
                             return false;
                         }
-                // }
-
-                //}
             }
             return true;
         }
