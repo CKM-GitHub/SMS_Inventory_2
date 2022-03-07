@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKM_Controls", "CKM_Control
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS_DB_Backup", "SMS_DB_Backup\SMS_DB_Backup.csproj", "{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Console", "DB_Console\DB_Console.csproj", "{821536AE-6ACE-49E8-B7B3-84F6B76105D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,10 @@ Global
 		{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BA60A4-84A1-4C35-BDD9-1AE81CCA9151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821536AE-6ACE-49E8-B7B3-84F6B76105D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821536AE-6ACE-49E8-B7B3-84F6B76105D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821536AE-6ACE-49E8-B7B3-84F6B76105D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821536AE-6ACE-49E8-B7B3-84F6B76105D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
