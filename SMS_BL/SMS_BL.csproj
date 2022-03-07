@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Base_BL.cs" />
     <Compile Include="Brand_List_BL.cs" />
+    <Compile Include="Excel_BL.cs" />
     <Compile Include="PETC0306I_BL.cs" />
     <Compile Include="m_bunrui_BL.cs" />
     <Compile Include="m_sports_BL.cs" />

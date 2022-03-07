@@ -54,7 +54,7 @@ namespace SMS_BL
         public bool ImportProcess(T_MakerZaiko_Entity tmze, string patternCD, DataTable dtPattern, int i, string insertDateTime)
         {
             psks0103idl.StartTransaction();
-            bool result = false; 
+            bool result = false;
             if (i == 0)
             {
                 result = Delete_BeforeImoprt(tmze);//do for first file only
@@ -170,7 +170,7 @@ namespace SMS_BL
                     colIndex = Convert.ToInt32(drs[0]["SEQ"].ToString()) - 1;
                     tmze.dt1.Columns[colIndex].ColumnName = "Nouki";
 
-                    if (drs[0]["Convert(ItemProperty, 'System.Int32')"].ToString().Equals("9"))
+                    if (drs[0]["ItemProperty"].ToString().Equals("9"))
                         noukiFlag = "1";
                 }
                 else
@@ -212,7 +212,7 @@ namespace SMS_BL
                 return psks0103idl.Import(tmie, insertDateTime,noukiFlag);
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

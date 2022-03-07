@@ -304,15 +304,15 @@ namespace SMS_DL
 
             Configuration config = ConfigurationManager.OpenExeConfiguration(@"C:\SMS\Config\App.config");
        //     ConnectionStringSettings setting=null;
-            if (config.ConnectionStrings.ConnectionStrings["SMS_DB"] != null)
-            {
-              //setting = new ConnectionStringSettings("SMS_DB", "Data Source=WIN-0LHAOSODL41\\SQLEXPRESS;Initial Catalog=SMS_V1;Persist Security Info=True;User ID=sa;Password=admin123456!", "System.Data.SqlClient");
-               config.ConnectionStrings.ConnectionStrings["SMS_DB"].ConnectionString = "Data Source=WIN-0LHAOSODL41\\SQL2014;Initial Catalog=SMS_V1;Persist Security Info=True;User ID=sa;Password=admin123456!";   // For server
-                //config.ConnectionStrings.ConnectionStrings["SMS_DB"].ConnectionString = "Data Source=DEVSERVER\\SQLEXPRESS;Initial Catalog=SMS_V1;Persist Security Info=True;User ID=sa;Password=admin123456!";
+            //if (config.ConnectionStrings.ConnectionStrings["SMS_DB"] != null)
+            //{
+            //  //setting = new ConnectionStringSettings("SMS_DB", "Data Source=WIN-0LHAOSODL41\\SQLEXPRESS;Initial Catalog=SMS_V1;Persist Security Info=True;User ID=sa;Password=admin123456!", "System.Data.SqlClient");
+            //   config.ConnectionStrings.ConnectionStrings["SMS_DB"].ConnectionString = "Data Source=WIN-0LHAOSODL41\\SQL2014;Initial Catalog=SMS_V1;Persist Security Info=True;User ID=sa;Password=admin123456!";   // For server
+            //    //config.ConnectionStrings.ConnectionStrings["SMS_DB"].ConnectionString = "Data Source=DEVSERVER\\SQLEXPRESS;Initial Catalog=SMS_V1;Persist Security Info=True;User ID=sa;Password=admin123456!";
               
-                config.Save(ConfigurationSaveMode.Modified);
-               ConfigurationManager.RefreshSection("connectionStrings");
-            }
+            //    config.Save(ConfigurationSaveMode.Modified);
+            //   ConfigurationManager.RefreshSection("connectionStrings");
+            //}
 
         }
 

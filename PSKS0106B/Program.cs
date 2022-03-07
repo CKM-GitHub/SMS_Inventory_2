@@ -123,9 +123,9 @@ namespace PSKS0106B
             try
             {
                 FtpWebRequest reqFTP;
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://163.43.113.92:22/"));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://163.43.113.92:50022/"));
                 reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential("capital_order_mail", "c!PiTal!InVent0ry");
+                reqFTP.Credentials = new NetworkCredential("capital_order_mail", "c!PiTal!0rd@rMa!l");
                 reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
                 reqFTP.Proxy = null;
                 reqFTP.KeepAlive = false;
@@ -174,8 +174,8 @@ namespace PSKS0106B
                     return;
                 }
                 FtpWebRequest reqFTP;
-                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + "163.43.113.92:22" + "/" + file));
-                reqFTP.Credentials = new NetworkCredential("capital_order_mail", "c!PiTal!InVent0ry");
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + "163.43.113.92:50022" + "/" + file));
+                reqFTP.Credentials = new NetworkCredential("capital_order_mail", "c!PiTal!0rd@rMa!l");
                 reqFTP.KeepAlive = false;
                 reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
                 reqFTP.UseBinary = true;
@@ -204,8 +204,8 @@ namespace PSKS0106B
 
                 writeStream.Close();
                 response.Close();
-                FtpWebRequest requestFileDelete = (FtpWebRequest)WebRequest.Create("ftp://163.43.113.92:22/" + file);
-                requestFileDelete.Credentials = new NetworkCredential("capital_order_mail", "c!PiTal!InVent0ry");
+                FtpWebRequest requestFileDelete = (FtpWebRequest)WebRequest.Create("ftp://163.43.113.92:50022/" + file);
+                requestFileDelete.Credentials = new NetworkCredential("capital_order_mail", "c!PiTal!0rd@rMa!l");
                 requestFileDelete.Method = WebRequestMethods.Ftp.DeleteFile;
 
                 FtpWebResponse responseFileDelete = (FtpWebResponse)requestFileDelete.GetResponse();
