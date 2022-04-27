@@ -327,7 +327,7 @@ namespace SMS_DL
            // config.ConnectionStrings.ConnectionStrings["SMS_DB"] is for origianl
             if (config.ConnectionStrings.ConnectionStrings["SMS_DB"] == null)           // config.ConnectionStrings.ConnectionStrings["SMS_DB"] is for origianl
             {
-                ConnectionStringSettings setting = new ConnectionStringSettings("SMS_DB", "Data Source=WIN-0LHAOSODL41\\SQL2014;Initial Catalog=SalesManagement;Persist Security Info=True;User ID=sa;Password=admin123456!", "System.Data.SqlClient");
+                ConnectionStringSettings setting = new ConnectionStringSettings("SMS_DB", "Data Source=192.168.0.5\\SQL2014;Initial Catalog=SalesManagement;Persist Security Info=True;User ID=sa;Password=admin123456!", "System.Data.SqlClient");
                 config.ConnectionStrings.ConnectionStrings.Add(setting);
                 config.Save(ConfigurationSaveMode.Modified);
             }
